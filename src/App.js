@@ -1,5 +1,9 @@
 import './App.css';
-import styled from 'styled-components';
+import styled , {ThemeProvider} from 'styled-components';
+import {darkTheme} from "./Utils/Themes";
+import Navbar from "./Components/Navbar";
+import Hero from "./Components/HeroSection";
+import Skills from "./Components/Skills"
 
 const Body = styled.div`
 background-color: ${({ theme }) => theme.bg};
@@ -9,12 +13,15 @@ overflow-x: hidden;
 
 function App() {
   return (
-    <div>
+    <ThemeProvider theme={darkTheme}>
+    <Navbar/>
     <Body>
-
+    <Hero/>
+    <Skills/>
+Portfolio
     </Body>
 
-    </div>
+    </ThemeProvider>
   );
 }
 
